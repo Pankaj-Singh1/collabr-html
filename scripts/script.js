@@ -94,6 +94,49 @@ const marq_swiper3 = new Swiper(".marquee3", {
   },
 });
 
+var mySwiper = new Swiper(".cat_swiper", {
+  direction: "horizontal",
+  loop: true,
+  slidesPerView: 4, // Show 4 cards at a time
+  centeredSlides: true,
+  // Adjust spacing between cards as needed
+  grabCursor: true,
+  effect: "coverflow",
+  coverflowEffect: {
+    rotate: 5, // Rotate each card by 90 degrees
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 30,
+    },
+    768: {
+      slidesPerView: 2,
+      centeredSlides: true,
+      spaceBetween: 5,
+    },
+    320: {
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 5,
+    },
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
 // AOS Initialize
 
 AOS.init();

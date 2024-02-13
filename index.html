@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -128,7 +129,7 @@
               <!-- Sub menu desktop -->
               <div
                 id="subMenu"
-                class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-xl bg-white shadow-lg opacity-0 translate-y-1 transition ease-out duration-200"
+                class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-[12rem] overflow-hidden rounded-xl bg-white shadow-lg opacity-0 translate-y-1 transition ease-out duration-200"
               >
                 <div class="p-1">
                   <div
@@ -465,19 +466,25 @@
               class="relative flex flex-col justify-start items-start lg:w-[90%]"
             >
               <div
-                class="bg-white relative w-full flex flex-row justify-start items-center border-[0.5px] h-12 lg:h-14 rounded-full shadow-2xl"
+                class="bg-white pl-5 relative w-full flex flex-row justify-start border-black items-center border-[0.5px] h-12 lg:h-14 rounded-full shadow-2xl"
               >
                 <div
-                  class="w-[10%] lg:px-0 px-3 lg:pl-0 flex flex-col justify-center items-center"
+                  id="home-search-bar"
+                  class="cursor-text flex text-base flex-col text-gray-500 justify-center items-start flex-1 h-full outline-none"
+                >
+                  <h1>Search Creators...</h1>
+                </div>
+                <div
+                  class="lg:pr-5 px-3 lg:pl-0 flex flex-col justify-center items-center"
                 >
                   <svg
-                    class="text-gray-500"
+                    class="text-black rotate-90"
                     stroke="currentColor"
                     fill="currentColor"
                     stroke-width="0"
                     viewBox="0 0 512 512"
-                    height="15px"
-                    width="15px"
+                    height="20px"
+                    width="20px"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -486,53 +493,8 @@
                   </svg>
                 </div>
                 <div
-                  id="home-search-bar"
-                  class="cursor-text flex text-sm flex-col text-gray-500 justify-center items-start flex-1 h-full outline-none"
-                >
-                  <h1>Search keywords...</h1>
-                </div>
-
-                <div class="dropdown" onmouseleave="collapseDropdown()">
-                  <div
-                    class="p-2 cursor-pointer headfont flex flex-row justify-center items-center gap-2 px-3 bg-gray-900 text-white mr-1 lg:mr-2 rounded-full"
-                    onclick="toggleDropdown()"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      viewBox="0 0 24 24"
-                      id="chevronIcon"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"
-                      />
-                    </svg>
-                    <p
-                      class="headfont text-xs lg:text-base"
-                      id="selectedOption"
-                    >
-                      All Platforms
-                    </p>
-                  </div>
-                  <div
-                    class="dropdown-content"
-                    id="dropdownContent"
-                    onmouseleave="collapseDropdown()"
-                  >
-                    <a href="#" onclick="selectOption(this)">YouTube</a>
-                    <a href="#" onclick="selectOption(this)">Instagram</a>
-                    <a href="#" onclick="selectOption(this)">Facebook</a>
-                    <!-- Add more options here -->
-                  </div>
-                </div>
-
-                <!-- Search dropdown -->
-
-                <div
                   id="search-drop"
-                  class="absolute z-[8000] hidden overflow-hidden top-0 p-3 h-fit rounded-3xl bg-white shadow-xl w-full"
+                  class="absolute left-0 z-[8000] hidden overflow-hidden top-0 p-3 h-fit rounded-3xl bg-white shadow-xl w-full"
                 >
                   <!-- Heading -->
                   <div class="w-full">
@@ -545,8 +507,8 @@
                         fill="currentColor"
                         stroke-width="0"
                         viewBox="0 0 512 512"
-                        height="15"
-                        width="15"
+                        height="20px"
+                        width="20px"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -555,24 +517,13 @@
                       </svg>
                       <input
                         id="searchinput"
-                        class="flex-1 headfont outline-none text-sm h-full"
+                        class="flex-1 headfont outline-none text-md h-full"
                         type="text"
                         placeholder="Search keywords..."
                         name=""
                         id=""
                       />
-                      <div>
-                        <div
-                          class="p-2 cursor-pointer headfont flex flex-row justify-center items-center gap-2 px-3 bg-gray-900 text-white mr-1 lg:mr-2 rounded-full"
-                        >
-                          <p
-                            class="headfont text-xs lg:text-base"
-                            id="selectedOption2"
-                          >
-                            All Platforms
-                          </p>
-                        </div>
-                      </div>
+                      <div></div>
                       <!-- Close Search menu -->
                       <div class="hidden lg:block">
                         <svg
@@ -1180,7 +1131,7 @@
             <!-- Card -->
 
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group object-top lg:object-center rounded-t-2xl overflow-hidden h-[20rem]"
@@ -1195,7 +1146,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1208,9 +1159,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1227,9 +1184,16 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
+
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1242,6 +1206,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -1287,14 +1257,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -1322,8 +1337,10 @@
                 </div>
               </div>
             </li>
+
+            <!--  -->
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -1337,7 +1354,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1350,9 +1367,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1369,9 +1392,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1384,6 +1413,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -1429,14 +1464,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -1465,7 +1545,7 @@
               </div>
             </li>
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -1480,7 +1560,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1493,9 +1573,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1512,9 +1598,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1527,6 +1619,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -1572,14 +1670,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -1608,7 +1751,7 @@
               </div>
             </li>
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -1622,7 +1765,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1635,9 +1778,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1654,9 +1803,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1669,6 +1824,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -1714,14 +1875,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -1766,7 +1972,7 @@
             <!-- Card -->
 
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -1780,7 +1986,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1793,9 +1999,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1812,9 +2024,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1827,6 +2045,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -1872,14 +2096,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -1908,7 +2177,7 @@
               </div>
             </li>
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -1922,7 +2191,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1935,9 +2204,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1954,9 +2229,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -1969,6 +2250,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -2014,14 +2301,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -2050,7 +2382,7 @@
               </div>
             </li>
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -2064,7 +2396,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2077,9 +2409,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2096,9 +2434,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2111,6 +2455,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -2156,14 +2506,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -2192,7 +2587,7 @@
               </div>
             </li>
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -2206,7 +2601,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2219,9 +2614,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2238,9 +2639,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2253,6 +2660,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -2298,14 +2711,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -2350,7 +2808,7 @@
             <!-- Card -->
 
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -2364,7 +2822,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2377,9 +2835,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2396,9 +2860,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2411,6 +2881,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -2456,14 +2932,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -2492,7 +3013,7 @@
               </div>
             </li>
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -2506,7 +3027,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2519,9 +3040,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2538,9 +3065,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2553,6 +3086,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -2598,14 +3137,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -2634,7 +3218,7 @@
               </div>
             </li>
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -2648,7 +3232,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2661,9 +3245,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2680,9 +3270,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2695,6 +3291,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -2740,14 +3342,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -2776,7 +3423,7 @@
               </div>
             </li>
             <li
-              class="bg-white cursor-pointer duration-[0.8s] border-[0.2px] overflow-hidden rounded-2xl w-full shadow-xl"
+              class="bg-white hover:shadow-2xl hover:shadow-[rgba(0,0,0,0.15)] cursor-pointer duration-[0.2s] border-[0.2px] overflow-hidden rounded-2xl w-full"
             >
               <div
                 class="flex-1 relative group rounded-t-2xl overflow-hidden h-[20rem]"
@@ -2790,7 +3437,7 @@
                   class="absolute flex flex-col justify-start items-center gap-1 top-3 right-3"
                 >
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2803,9 +3450,15 @@
                         d="M5 21V5q0-.825.588-1.412T7 3h10q.825 0 1.413.588T19 5v16l-7-3z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Bookmark
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.2s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group relative delay-[0.1s] shadow-lg duration-[0.3s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2822,9 +3475,15 @@
                         d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2 .897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 text-xs left-[-7.5rem] top-1/2 transform -translate-y-1/2 ml-0 px-2.5 rounded-full shadow-xl"
+                    >
+                      Chat with creator
+                    </div>
                   </div>
                   <div
-                    class="w-8 h-8 shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 delay-[0.3s] bg-[rgba(255,255,255,0.8)] text-gray-800 hover:bg-white cursor-pointer rounded-full flex flex-col justify-center items-center"
+                    class="w-8 h-8 group delay-[0.2s] relative shadow-lg duration-[0.4s] translate-x-20 group-hover:translate-x-0 transition-all bg-[rgba(255,255,255,0.2)] text-white hover:bg-white hover:text-primary cursor-pointer rounded-full flex flex-col justify-center items-center action_btn"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -2837,6 +3496,12 @@
                         d="m21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5.1 11-5.1V19z"
                       />
                     </svg>
+                    <!-- Tooltip -->
+                    <div
+                      class="bg-white tooltip hidden text-gray-700 absolute p-1 -ml-3 text-xs -left-20 px-2.5 rounded-full shadow-xl"
+                    >
+                      Share profile
+                    </div>
                   </div>
                 </div>
                 <div
@@ -2882,14 +3547,59 @@
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      viewBox="0 0 24 24"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 256 256"
                     >
-                      <path
-                        fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
-                      />
+                      <g fill="none">
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram0)"
+                          rx="60"
+                        />
+                        <rect
+                          width="256"
+                          height="256"
+                          fill="url(#skillIconsInstagram1)"
+                          rx="60"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"
+                        />
+                        <defs>
+                          <radialGradient
+                            id="skillIconsInstagram0"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#fd5" />
+                            <stop offset=".1" stop-color="#fd5" />
+                            <stop offset=".5" stop-color="#ff543e" />
+                            <stop offset="1" stop-color="#c837ab" />
+                          </radialGradient>
+                          <radialGradient
+                            id="skillIconsInstagram1"
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#3771c8" />
+                            <stop offset=".128" stop-color="#3771c8" />
+                            <stop
+                              offset="1"
+                              stop-color="#60f"
+                              stop-opacity="0"
+                            />
+                          </radialGradient>
+                        </defs>
+                      </g>
                     </svg>
                     ₹24,000
                   </button>
@@ -2933,7 +3643,7 @@
               </h1>
               <a
                 href="#"
-                class="hidden text-sm bg-white p-2 px-3 font-semibold text-primary hover:text-hoverprimary sm:block"
+                class="hidden text-sm bg-white rounded-full p-2 px-3 font-semibold text-primary hover:text-hoverprimary sm:block"
               >
                 View all categories
                 <span aria-hidden="true"> &rarr;</span>
@@ -2943,16 +3653,17 @@
             <div class="mt-4 flow-root">
               <div class="-my-2">
                 <div
-                  class="relative box-content h-80 overflow-x-auto py-2 xl:overflow-visible"
+                  class="relative cat_swiper box-content px-20 lg:px-10 h-80 overflow-x-auto hideScroll py-2 xl:overflow-visible"
                 >
-                  <div
-                    class="absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0"
-                  >
+                  <div class="swiper-wrapper">
                     <a
                       href="#"
-                      class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
+                      class="relative shadow-lg swiper-slide shadow-[rgba(0,0,0,0.2)] flex h-80 group w-56 flex-col overflow-hidden rounded-lg p-6 bg-primary xl:w-auto"
                     >
-                      <span aria-hidden="true" class="absolute inset-0">
+                      <span
+                        aria-hidden="true"
+                        class="group-hover:opacity-50 absolute inset-0"
+                      >
                         <img
                           src="https://img.freepik.com/free-photo/analog-landscape-city-with-buildings_23-2149661456.jpg?w=740&t=st=1707753615~exp=1707754215~hmac=213382dc7692a8c528bb5a56b59e526eee8d4c46498933befe1b71dcee840183"
                           alt=""
@@ -2970,9 +3681,12 @@
                     </a>
                     <a
                       href="#"
-                      class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
+                      class="relative shadow-lg swiper-slide shadow-[rgba(0,0,0,0.2)] flex h-80 group w-56 flex-col overflow-hidden rounded-lg p-6 bg-primary xl:w-auto"
                     >
-                      <span aria-hidden="true" class="absolute inset-0">
+                      <span
+                        aria-hidden="true"
+                        class="group-hover:opacity-50 absolute inset-0"
+                      >
                         <img
                           src="https://img.freepik.com/free-photo/view-3d-airplane-with-travel-destination-landscape_23-2151022215.jpg?t=st=1707753888~exp=1707757488~hmac=b1d2b1efa8cba5f087d4ed0e1b46b7ecebf6fc8be41614ea3931d6a5d9ce3af8&w=360"
                           alt=""
@@ -2990,9 +3704,12 @@
                     </a>
                     <a
                       href="#"
-                      class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
+                      class="relative shadow-lg swiper-slide shadow-[rgba(0,0,0,0.2)] flex h-80 group w-56 flex-col overflow-hidden rounded-lg p-6 bg-primary xl:w-auto"
                     >
-                      <span aria-hidden="true" class="absolute inset-0">
+                      <span
+                        aria-hidden="true"
+                        class="group-hover:opacity-50 absolute inset-0"
+                      >
                         <img
                           src="https://img.freepik.com/free-photo/ai-generated-cute-girl-pic_23-2150649864.jpg?t=st=1707753731~exp=1707757331~hmac=89f71eb5982c02ecd5adb36ea41a9773ef781c4c130aad5918033844e08f7435&w=360"
                           alt=""
@@ -3010,9 +3727,58 @@
                     </a>
                     <a
                       href="#"
-                      class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
+                      class="relative shadow-lg swiper-slide shadow-[rgba(0,0,0,0.2)] flex h-80 group w-56 flex-col overflow-hidden rounded-lg p-6 bg-primary xl:w-auto"
                     >
-                      <span aria-hidden="true" class="absolute inset-0">
+                      <span
+                        aria-hidden="true"
+                        class="group-hover:opacity-50 absolute inset-0"
+                      >
+                        <img
+                          src="https://img.freepik.com/free-photo/analog-landscape-city-with-buildings_23-2149661456.jpg?w=740&t=st=1707753615~exp=1707754215~hmac=213382dc7692a8c528bb5a56b59e526eee8d4c46498933befe1b71dcee840183"
+                          alt=""
+                          class="h-full w-full object-cover object-center"
+                        />
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
+                      ></span>
+                      <span
+                        class="relative mt-auto text-center text-xl font-bold text-white"
+                        >Real Estate</span
+                      >
+                    </a>
+                    <a
+                      href="#"
+                      class="relative shadow-lg swiper-slide shadow-[rgba(0,0,0,0.2)] flex h-80 group w-56 flex-col overflow-hidden rounded-lg p-6 bg-primary xl:w-auto"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="group-hover:opacity-50 absolute inset-0"
+                      >
+                        <img
+                          src="https://img.freepik.com/free-photo/ai-generated-cute-girl-pic_23-2150649864.jpg?t=st=1707753731~exp=1707757331~hmac=89f71eb5982c02ecd5adb36ea41a9773ef781c4c130aad5918033844e08f7435&w=360"
+                          alt=""
+                          class="h-full w-full object-cover object-center"
+                        />
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
+                      ></span>
+                      <span
+                        class="relative mt-auto text-center text-xl font-bold text-white"
+                        >Beauty & Wellness</span
+                      >
+                    </a>
+                    <a
+                      href="#"
+                      class="relative shadow-lg swiper-slide shadow-[rgba(0,0,0,0.2)] flex h-80 group w-56 flex-col overflow-hidden rounded-lg p-6 bg-primary xl:w-auto"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="group-hover:opacity-50 absolute inset-0"
+                      >
                         <img
                           src="https://img.freepik.com/free-photo/grilled-meat-cheeseburger-fries-tomato-rustic-wooden-table-generated-by-artificial-intelligence_188544-130193.jpg?t=st=1707753787~exp=1707757387~hmac=d4c6be0e72114496094d806e4523c0d689741f91cb606ecf4e8f74ddb32c24d3&w=826"
                           alt=""
@@ -3030,9 +3796,12 @@
                     </a>
                     <a
                       href="#"
-                      class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
+                      class="relative shadow-lg swiper-slide shadow-[rgba(0,0,0,0.2)] flex h-80 group w-56 flex-col overflow-hidden rounded-lg p-6 bg-primary xl:w-auto"
                     >
-                      <span aria-hidden="true" class="absolute inset-0">
+                      <span
+                        aria-hidden="true"
+                        class="group-hover:opacity-50 absolute inset-0"
+                      >
                         <img
                           src="https://img.freepik.com/free-photo/senior-stylish-women-walking-down-streets-new-york-city_23-2150820026.jpg?t=st=1707753842~exp=1707757442~hmac=bd696f53537e02b3835c4f8c19f173a1098b244078e64ed9f27f86cf8c27b05d&w=360"
                           alt=""
@@ -3056,7 +3825,7 @@
             <div class="mt-10 px-4 text-center text-white sm:hidden">
               <a
                 href="#"
-                class="text-lg bg-white p-3 px-3 font-semibold text-primary hover:text-hoverprimary sm:block"
+                class="text-lg rounded-full bg-white p-3 px-3 font-semibold text-primary hover:text-hoverprimary sm:block"
               >
                 View all categories
                 <span aria-hidden="true"> &rarr;</span>
@@ -3326,7 +4095,7 @@
             class="mx-auto mt-5 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-10 lg:mx-0 lg:max-w-none lg:grid-cols-4"
           >
             <article
-              class="relative group isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+              class="relative group isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-5 pb-5 pt-80 sm:pt-48 lg:pt-80"
             >
               <img
                 src="https://img.freepik.com/free-photo/medium-shot-woman-living-as-digital-nomad_23-2151205452.jpg?t=st=1707755166~exp=1707758766~hmac=991dc96e6dd196149195424766e711485508ff95a3f64102a755a0cb322a050e&w=740"
@@ -3359,17 +4128,27 @@
                     />
                     Michael Foster
                   </div>
+                  <div
+                    class="p-1 px-2.5 text-xs text-black absolute top-4 left-4 rounded-full bg-[rgba(255,255,255,0.8)]"
+                  >
+                    Influencer marketing 101
+                  </div>
+                </div>
+                <div
+                  class="p-1 px-2.5 text-xs text-black absolute top-4 left-4 rounded-full bg-[rgba(255,255,255,0.8)]"
+                >
+                  Influencer marketing 101
                 </div>
               </div>
               <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
                 <a href="#">
                   <span class="absolute inset-0"></span>
-                  Boost your conversion rate
+                  Leveraging User-Generated Content (UGC) for Brand Success
                 </a>
               </h3>
             </article>
             <article
-              class="relative group isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+              class="relative group isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-5 pb-5 pt-80 sm:pt-48 lg:pt-80"
             >
               <img
                 src="https://img.freepik.com/free-photo/man-dining-while-using-gadget-restaurant_32991-2572.jpg?t=st=1707755228~exp=1707758828~hmac=c52c07654d3c7f6836bbb2c746854e182b101fca7921c7ceada0abbebfdd9568&w=996"
@@ -3402,17 +4181,23 @@
                     />
                     Michael Foster
                   </div>
+                  <div
+                    class="p-1 px-2.5 text-xs text-black absolute top-4 left-4 rounded-full bg-[rgba(255,255,255,0.8)]"
+                  >
+                    Influencer marketing 101
+                  </div>
                 </div>
               </div>
               <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
                 <a href="#">
                   <span class="absolute inset-0"></span>
-                  Boost your conversion rate
+                  Barter Influencer Marketing: Understanding the Concept and
+                  Mechanics
                 </a>
               </h3>
             </article>
             <article
-              class="relative group isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+              class="relative group isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-5 pb-5 pt-80 sm:pt-48 lg:pt-80"
             >
               <img
                 src="https://img.freepik.com/free-photo/fast-fashion-concept-with-full-clothing-store_23-2150871313.jpg?t=st=1707755292~exp=1707758892~hmac=cc840775d5fa49a5e53f51cbb67a040e904ac84938eb3111ee7e9dffd564f8b4&w=360"
@@ -3445,17 +4230,22 @@
                     />
                     Michael Foster
                   </div>
+                  <div
+                    class="p-1 px-2.5 text-xs text-black absolute top-4 left-4 rounded-full bg-[rgba(255,255,255,0.8)]"
+                  >
+                    Influencer marketing 101
+                  </div>
                 </div>
               </div>
               <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
                 <a href="#">
                   <span class="absolute inset-0"></span>
-                  Boost your conversion rate
+                  A Guide to Hiring the Right Influencers for Your Brand
                 </a>
               </h3>
             </article>
             <article
-              class="relative group isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+              class="relative group isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-5 pb-5 pt-80 sm:pt-48 lg:pt-80"
             >
               <img
                 src="https://img.freepik.com/free-photo/people-wearing-futuristic-high-tech-virtual-reality-glasses_23-2151141590.jpg?t=st=1707755331~exp=1707758931~hmac=04ac39cc50daae96937206b01ce1dde1dca945fe0e7e61b927809a3e0327a30f&w=360"
@@ -3488,12 +4278,17 @@
                     />
                     Michael Foster
                   </div>
+                  <div
+                    class="p-1 px-2.5 text-xs text-black absolute top-4 left-4 rounded-full bg-[rgba(255,255,255,0.8)]"
+                  >
+                    Influencer marketing 101
+                  </div>
                 </div>
               </div>
               <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
                 <a href="#">
                   <span class="absolute inset-0"></span>
-                  Boost your conversion rate
+                  Why Brands Are Turning to Micro-Influencers
                 </a>
               </h3>
             </article>
@@ -3503,86 +4298,99 @@
 
       <!-- CTA Section -->
 
-      <div class="w-full woodbg bordee-2 max-w-7xl py-24 rounded-2xl">
-        <section class="py-5">
-          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div
+        class="w-full bordee-2 px-3 flex flex-col justify-start items-center gap-5 py-24 max-w-[75rem] rounded-2xl"
+      >
+        <section
+          class="relative py-32 rounded-2xl lg:rounded-2xl overflow-hidden bg-black lg:py-14"
+        >
+          <div class="absolute inset-0">
+            <video
+            loop
+            autoplay
+            muted
+            playsinline
+            src="./video/influencer.mp4"
+            class="w-full h-full object-cover"
+        />
+          </div>
+
+          <div
+            class="absolute inset-0 hidden bg-gradient-to-r md:block from-black to-transparent"
+          ></div>
+
+          <div class="absolute inset-0 block bg-black/60 md:hidden"></div>
+
+          <div class="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div
-              class="lg:py-14 lg:px-20 p-10 rounded-2xl bg-gradient-to-r from-primary to-violet-600 flex items-center justify-between flex-col lg:flex-row"
+              class="text-center flex flex-col justify-center lg:justify-start lg:items-start items-center md:w-2/3 lg:w-1/2 xl:w-1/3 md:text-left"
             >
-              <div class="block text-center mb-5 lg:text-left lg:mb-0">
-                <h2
-                  class="font-manrope headfont text-4xl text-white font-medium mb-5 lg:mb-2"
-                >
-                  Connect with brands
-                </h2>
-                <p class="text-xl text-white">
-                  They Could Be Looking For Someone Like You.
-                </p>
-              </div>
-              <a
-                href="#"
-                class="flex items-center group gap-2 bg-white hover:shadow-xl rounded-full shadow-sm text-lg text-primary hover:scale-[1.05] font-medium py-4 px-8 transition-all duration-500"
+              <h1 class="text-xl text-white px-1 py-2">INFLUENCERS</h1>
+              <h1
+                class="text-4xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight"
+              >
+                Connect with brands
+              </h1>
+              <p class="mt-4 text-xl font-medium text-white">
+                Unleash your creativity, collaborate for success, and seize the
+                opportunity to make your mark. They're searching for someone
+                like you – someone with passion and drive. Embrace the challenge
+                and start your journey now.
+              </p>
+
+              <button
+                class="p-2 mt-8 lg:p-4 px-7 lg:px-10 lg:mt-10 shadow-2xl gap-2 text-lg rounded-full flex flex-row justify-center items-center transition-all bg-primary text-white hover:bg-white hover:text-primary"
               >
                 <h1>Signup as a creator</h1>
-                <svg
-                  width="19"
-                  height="14"
-                  viewBox="0 0 19 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.75 7L16.4167 7M11.8333 12.5L16.6852 7.64818C16.9907 7.34263 17.1435 7.18985 17.1435 7C17.1435 6.81015 16.9907 6.65737 16.6852 6.35182L11.8333 1.5"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 3h7v7m-1.5-5.5L20 12m-3-7H8a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3v-9"/></svg>
+              </button>
             </div>
           </div>
         </section>
 
-        <section class="py-3">
-          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div
-              class="lg:py-14 lg:px-20 p-10 rounded-2xl bg-black flex items-center justify-between flex-col lg:flex-row"
-            >
-              <div class="block text-center mb-5 lg:text-left lg:mb-0">
-                <h2
-                  class="font-manrope text-4xl headfont text-white font-medium mb-5 lg:mb-2"
-                >
-                  Connect with Influencers
-                </h2>
-                <p class="text-xl text-indigo-100">
-                  Discover, connect and Collab with creators in minutes
-                </p>
-              </div>
-              <a
-                href="#"
-                class="flex items-center gap-2 bg-primary hover:scale-[1.05] rounded-full shadow-sm text-lg text-white font-medium py-4 px-8 transition-all duration-500"
+        <!-- This example requires Tailwind CSS v2.0+ -->
+        <div
+          class="relative rounded-xl  overflow-hidden text-white bg-gradient-to-br from-primary to-indigo-700 testbg"
+        >
+          <div class="h-56   sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+            <img
+              class="w-full  h-full object-cover"
+              src="./assets/cta.jpg"
+              alt=""
+            />
+          </div>
+          <div
+            class="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
+          >
+            <div class="md:ml-auto md:w-1/2 md:pl-10">
+              <h1 class="text-xl text-white px-1 py-2">
+                BRANDS
+              </h2>
+              <h1
+                class="text-4xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight"
               >
-                <h1>Signup as a brand</h1>
-                <svg
-                  width="19"
-                  height="14"
-                  viewBox="0 0 19 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.75 7L16.4167 7M11.8333 12.5L16.6852 7.64818C16.9907 7.34263 17.1435 7.18985 17.1435 7C17.1435 6.81015 16.9907 6.65737 16.6852 6.35182L11.8333 1.5"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
+                Connect with Influencers
+              </h1>
+              <p class="mt-4 text-xl font-medium text-white">
+                Join forces with influential creators who can take your message to the next level. Embrace collaboration, creativity, and success as you partner with like-minded individuals to drive engagement and growth.
+              </p>
+              <div class="mt-8 w-full">
+                <div class="lg:inline-flex lg:gap-4 w-full rounded-md ">
+                  <button
+                class="p-2 mt-8 w-full flex-none lg:flex-1 lg:p-3 px-7 lg:px-8 lg:mt-10 shadow-2xl gap-2 text-lg rounded-full flex flex-row justify-center items-center transition-all bg-black text-white hover:bg-white hover:text-primary"
+              >
+                <h1>Find Creators</h1>
+              </button>
+
+              <button
+              class="p-2 mt-3 lg:p-4 flex-none lg:flex-1 w-full px-7 lg:px-8 lg:mt-10 shadow-2xl gap-2 text-lg rounded-full flex flex-row justify-center items-center transition-all bg-white text-black hover:bg-white hover:text-primary"
+            >
+              <h1>Signup as a creators</h1>
+            </button>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </main>
     <!-- End of Main Section -->
@@ -3850,6 +4658,7 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/header.js"></script>
